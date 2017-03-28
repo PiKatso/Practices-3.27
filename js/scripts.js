@@ -34,11 +34,14 @@ $(document).ready(function() {
 
     var wdThree = splitWd.map(function(tmpindex) {
 
-      if (tmpindex.length <= 3) {
+      // for (var count = 0; count <= splitWd.length; count += 1 ) {
+      //   console.log(count);
+      // }
+      if (tmpindex.length >= 3) {
         return tmpindex;
         console.log(tmpindex);
       } else {
-        console.log("not 3");
+        console.log(tmpindex >= 3);
       }
       console.log("wdThree: " + wdThree);
 
@@ -46,6 +49,16 @@ $(document).ready(function() {
     $("#poetry").text(initialWd);
 
   });
+  // end word play
+  $("#formThree").submit(function(event){
+    event.preventDefault();
 
-
+    var input = parseInt($("#factorial-input").val());
+    var factor = function(input) {
+      if (input === 0) {
+        return 1;
+      } else (return input * factorial(n - 1);
+      }
+      alert(number);
+  });
 });
