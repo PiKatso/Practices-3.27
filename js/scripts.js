@@ -1,27 +1,30 @@
+var factorial = function(input) {
+  if (input === 0) {
+    return 1;
+  } else {
+  return (input * factorial(input - 1));
+}};
 $(document).ready(function() {
-
   $("#formOne").submit(function(event){
-  event.preventDefault();
+    event.preventDefault();
 
+    var groArr = [];
 
+    groArr.push($("#input1").val());
+    groArr.push($("#input2").val());
+    groArr.push($("#input3").val());
 
-  var groArr = [];
+    var orderedGroArr = groArr.sort();
 
-  groArr.push($("#input1").val());
-  groArr.push($("#input2").val());
-  groArr.push($("#input3").val());
+    var this1 = orderedGroArr.map(function(arritem) {
+      return arritem.toUpperCase();
+    });
 
-  var orderedGroArr = groArr.sort();
+    $("#buyme1").text(this1[0]);
+    $("#buyme2").text(this1[1]);
+    $("#buyme3").text(this1[2]);
 
-  var this1 = orderedGroArr.map(function(arritem) {
-    return arritem.toUpperCase();
-  });
-
-  $("#buyme1").text(this1[0]);
-  $("#buyme2").text(this1[1]);
-  $("#buyme3").text(this1[2]);
-
-  $("#formOne").hide();
+    $("#formOne").hide();
   });
   // grocery list fuctions
 
@@ -52,13 +55,8 @@ $(document).ready(function() {
   // end word play
   $("#formThree").submit(function(event){
     event.preventDefault();
-
     var input = parseInt($("#factorial-input").val());
-    var factor = function(input) {
-      if (input === 0) {
-        return 1;
-      } else (return input * factorial(n - 1);
-      }
-      alert(number);
+    var result = factorial(input);
+    $("#factorial-result").text(result);
   });
 });
